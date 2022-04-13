@@ -48,10 +48,10 @@ a:hover{
     position: absolute !important;
     right: 10px !important;
     top: 25px !important;
-    font-size: 1.2rem !important;
     background-color: var(--bgSecondary) !important;
     border: none !important;
 }
+
 
 .loader{
     height: 81vh;
@@ -60,23 +60,7 @@ a:hover{
     align-items: center;
 }
 
-@media screen and (max-width:1300px){
-    .main{
-        margin-left: 50px;
-    }
-}
 
-@media screen and (max-width:1170px){
-    .main{
-        margin-left: 50px;
-    }
-}
-
-@media screen and (max-width:1000px){
-    .main{
-        margin-left: 100px;
-    }
-}
 
 @media screen and (max-width:800px){
     .app{
@@ -91,13 +75,15 @@ a:hover{
     .main{
         flex: 1;
         margin-top: 90px;
+        padding-left: 0px;
         margin-left: 0px;
         margin-right: 10px;
     }
 
     .nav-container{
-        height: 8vh;
+        height: 5vh;
         position:fixed;
+        top:0;
         width: 100%;
         z-index: 100;
         background-color: var(--bgSecondary);

@@ -1,4 +1,3 @@
-import axios from "axios";
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react"
 
 
@@ -17,6 +16,15 @@ export const cryptoApi = createApi({
         getCryptos: builder.query({
             query: (count) => createRequest(`/coins?limit=${count}`)
         }),
+        getCryptoDetails: builder.query({
+            query: (coinId) => createRequest(`/coin/${coinId}`)
+        }),
+        getCryptoHistory: builder.query({
+            query: ({coinId, timePeriod}) => createRequest(`coin/${coinId}/history?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=${timePeriod}`)
+        }),
+        getExchanges: builder.query({
+            query: () => createRequest(`/exchange/-zdvbieRdZ`)
+        }),
         
 
     })
@@ -24,5 +32,8 @@ export const cryptoApi = createApi({
     
 })
 export const {
-    useGetCryptosQuery
+    useGetCryptosQuery,
+    useGetCryptoDetailsQuery,
+    useGetCryptoHistoryQuery,
+    useGetExchangesQuery
 } = cryptoApi;
